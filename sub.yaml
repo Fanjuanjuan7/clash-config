@@ -209,7 +209,8 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
     udp: true
-    - name: '美国1'
+
+  - name: '美国1'
     type: ss
     server: newonehsy002.test32123.site
     port: 46901
@@ -398,7 +399,7 @@ proxies:
     server: newonehsy002.test32123.site
     port: 49200
     cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0
+    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
     udp: true
 
   - name: '泰国3'
@@ -838,4 +839,5 @@ rules:
   - 'GEOIP,APPLE,🌍 全球直连' # Apple 的 CDN 可能不在 CN 范围内，单独直连
 
   # 最终兜底规则
+  - 'MATCH,🎯 代理模式选择'
   - 'MATCH,🎯 代理模式选择'
