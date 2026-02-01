@@ -5,839 +5,584 @@ mode: rule
 log-level: info
 external-controller: '127.0.0.1:9090'
 dns:
-  enable: true
-  ipv6: false
-  default-nameserver: [223.5.5.5, 119.29.29.29]
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  use-hosts: true
-  nameserver: 
-    - 'https://doh.pub/dns-query'
-    - 'https://dns.alidns.com/dns-query'
-  fallback: 
-    - 'https://doh.dns.sb/dns-query'
-    - 'https://dns.cloudflare.com/dns-query'
-    - 'https://dns.twnic.tw/dns-query'
-    - 'tls://8.8.4.4:853'
-  fallback-filter: 
-    geoip: true
-    ipcidr: 
-      - 240.0.0.0/4
-      - 0.0.0.0/32
-
+    enable: true
+    ipv6: false
+    default-nameserver: [223.5.5.5, 119.29.29.29]
+    enhanced-mode: fake-ip
+    fake-ip-range: 198.18.0.1/16
+    use-hosts: true
+    nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
+    fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://8.8.4.4:853']
+    fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
 proxies:
-  - name: '剩余流量：299.23 GB'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 14186
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '距离下次重置剩余：14 天'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 14186
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '套餐到期：2026-02-15'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 14186
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '国内地址：hsy.浙地珠宝.com'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 14186
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '香港1'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 14186
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '香港2'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 34744
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '香港3'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 27028
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '香港4'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 52081
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '香港5'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 53526
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '香港6'
-    type: ss
-    server: onehsynew002.fengyyds.site
-    port: 30666
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '香港7'
-    type: ss
-    server: onehsynew002.fengyyds.site
-    port: 42625
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '香港8'
-    type: ss
-    server: onehsynew002.fengyyds.site
-    port: 36137
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '台湾1'
-    type: ss
-    server: onehsynew002.fengyyds.site
-    port: 35582
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '台湾2'
-    type: ss
-    server: onehsynew002.fengyyds.site
-    port: 10565
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '台湾3'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 55645
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '台湾4'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 15090
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '台湾5'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 57110
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '日本1'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 48609
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '日本2'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 19576
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '日本3'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 11810
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '日本4'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 51611
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '日本5'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 56782
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '日本6'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 40953
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '美国1'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 46901
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '美国2'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 41183
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '美国3'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 24145
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '美国4'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 28673
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '美国5'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 31987
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '美国6'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 50203
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '新加坡1'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 10849
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '新加坡2'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 18151
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '新加坡3'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 11374
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '新加坡4'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 54827
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '新加坡5'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 56291
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '韩国1'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 19470
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '韩国2'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 51392
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '韩国3'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 14804
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '韩国4'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 48198
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '英国1'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 54589
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '英国2'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 24167
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '英国3'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 11671
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '英国4'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 52283
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '越南1'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 27263
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '越南2'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 15824
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '越南3'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 10737
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '泰国1'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 46242
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '泰国2'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 49200
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '泰国3'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 42909
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '俄罗斯1'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 21474
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '俄罗斯2'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 56982
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
-  - name: '俄罗斯3'
-    type: ss
-    server: newonehsy002.test32123.site
-    port: 15754
-    cipher: chacha20-ietf-poly1305
-    password: '6377534a-af82-4ec6-b602-97dc76a0dc53'
-    udp: true
-
+    - { name: '剩余流量：299.23 GB', type: ss, server: newonehsy002.test32123.site, port: 14186, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: '距离下次重置剩余：14 天', type: ss, server: newonehsy002.test32123.site, port: 14186, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 套餐到期：2026-02-15, type: ss, server: newonehsy002.test32123.site, port: 14186, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 国内地址：hsy.浙地珠宝.com, type: ss, server: newonehsy002.test32123.site, port: 14186, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 香港1, type: ss, server: newonehsy002.test32123.site, port: 14186, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 香港2, type: ss, server: newonehsy002.test32123.site, port: 34744, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 香港3, type: ss, server: newonehsy002.test32123.site, port: 27028, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 香港4, type: ss, server: newonehsy002.test32123.site, port: 52081, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 香港5, type: ss, server: newonehsy002.test32123.site, port: 53526, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 香港6, type: ss, server: onehsynew002.fengyyds.site, port: 30666, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 香港7, type: ss, server: onehsynew002.fengyyds.site, port: 42625, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 香港8, type: ss, server: onehsynew002.fengyyds.site, port: 36137, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 台湾1, type: ss, server: onehsynew002.fengyyds.site, port: 35582, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 台湾2, type: ss, server: onehsynew002.fengyyds.site, port: 10565, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 台湾3, type: ss, server: newonehsy002.test32123.site, port: 55645, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 台湾4, type: ss, server: newonehsy002.test32123.site, port: 15090, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 台湾5, type: ss, server: newonehsy002.test32123.site, port: 57110, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 日本1, type: ss, server: newonehsy002.test32123.site, port: 48609, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 日本2, type: ss, server: newonehsy002.test32123.site, port: 19576, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 日本3, type: ss, server: newonehsy002.test32123.site, port: 11810, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 日本4, type: ss, server: newonehsy002.test32123.site, port: 51611, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 日本5, type: ss, server: newonehsy002.test32123.site, port: 56782, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 日本6, type: ss, server: newonehsy002.test32123.site, port: 40953, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 美国1, type: ss, server: newonehsy002.test32123.site, port: 46901, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 美国2, type: ss, server: newonehsy002.test32123.site, port: 41183, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 美国3, type: ss, server: newonehsy002.test32123.site, port: 24145, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 美国4, type: ss, server: newonehsy002.test32123.site, port: 28673, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 美国5, type: ss, server: newonehsy002.test32123.site, port: 31987, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 美国6, type: ss, server: newonehsy002.test32123.site, port: 50203, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 新加坡1, type: ss, server: newonehsy002.test32123.site, port: 10849, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 新加坡2, type: ss, server: newonehsy002.test32123.site, port: 18151, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 新加坡3, type: ss, server: newonehsy002.test32123.site, port: 11374, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 新加坡4, type: ss, server: newonehsy002.test32123.site, port: 54827, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 新加坡5, type: ss, server: newonehsy002.test32123.site, port: 56291, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 韩国1, type: ss, server: newonehsy002.test32123.site, port: 19470, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 韩国2, type: ss, server: newonehsy002.test32123.site, port: 51392, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 韩国3, type: ss, server: newonehsy002.test32123.site, port: 14804, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 韩国4, type: ss, server: newonehsy002.test32123.site, port: 48198, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 英国1, type: ss, server: newonehsy002.test32123.site, port: 54589, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 英国2, type: ss, server: newonehsy002.test32123.site, port: 24167, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 英国3, type: ss, server: newonehsy002.test32123.site, port: 11671, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 英国4, type: ss, server: newonehsy002.test32123.site, port: 52283, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 越南1, type: ss, server: newonehsy002.test32123.site, port: 27263, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 越南2, type: ss, server: newonehsy002.test32123.site, port: 15824, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 越南3, type: ss, server: newonehsy002.test32123.site, port: 10737, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 泰国1, type: ss, server: newonehsy002.test32123.site, port: 46242, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 泰国2, type: ss, server: newonehsy002.test32123.site, port: 49200, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 泰国3, type: ss, server: newonehsy002.test32123.site, port: 44754, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 俄罗斯1, type: ss, server: newonehsy002.test32123.site, port: 53835, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 俄罗斯2, type: ss, server: newonehsy002.test32123.site, port: 39798, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 俄罗斯3, type: ss, server: newonehsy002.test32123.site, port: 11685, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
+    - { name: 俄罗斯4, type: ss, server: newonehsy002.test32123.site, port: 46216, cipher: chacha20-ietf-poly1305, password: 6377534a-af82-4ec6-b602-97dc76a0dc53, udp: true }
 proxy-groups:
-  - name: '🎯 代理模式选择'
-    type: select
-    proxies:
-      - '🚀 节点选择'
-      - '⚡️ 自动选择'
-      - '🛑 故障转移'
-      - '🌍 全球直连'
-      - '🇭🇰 香港节点'
-      - '🇯🇵 日本节点'
-      - '🇺🇸 美国节点'
-      - '🇸🇬 新加坡节点'
-      - '🇰🇷 韩国节点'
-      - '🇬🇧 英国节点'
-      - '🇻🇳 越南节点'
-      - '🇹🇭 泰国节点'
-      - '🇷🇺 俄罗斯节点'
-      - '🇨🇳 国内直连'
-
-  - name: '🚀 节点选择'
-    type: select
-    proxies:
-      - '🇭🇰 香港节点'
-      - '🇯🇵 日本节点'
-      - '🇺🇸 美国节点'
-      - '🇸🇬 新加坡节点'
-      - '🇰🇷 韩国节点'
-      - '🇬🇧 英国节点'
-      - '🇻🇳 越南节点'
-      - '🇹🇭 泰国节点'
-      - '🇷🇺 俄罗斯节点'
-      - '🇭🇰 香港1'
-      - '🇭🇰 香港2'
-      - '🇭🇰 香港3'
-      - '🇭🇰 香港4'
-      - '🇭🇰 香港5'
-      - '🇭🇰 香港6'
-      - '🇭🇰 香港7'
-      - '🇭🇰 香港8'
-      - '🇯🇵 日本1'
-      - '🇯🇵 日本2'
-      - '🇯🇵 日本3'
-      - '🇯🇵 日本4'
-      - '🇯🇵 日本5'
-      - '🇯🇵 日本6'
-      - '🇺🇸 美国1'
-      - '🇺🇸 美国2'
-      - '🇺🇸 美国3'
-      - '🇺🇸 美国4'
-      - '🇺🇸 美国5'
-      - '🇺🇸 美国6'
-      - '🇸🇬 新加坡1'
-      - '🇸🇬 新加坡2'
-      - '🇸🇬 新加坡3'
-      - '🇸🇬 新加坡4'
-      - '🇸🇬 新加坡5'
-      - '🇰🇷 韩国1'
-      - '🇰🇷 韩国2'
-      - '🇰🇷 韩国3'
-      - '🇰🇷 韩国4'
-      - '🇬🇧 英国1'
-      - '🇬🇧 英国2'
-      - '🇬🇧 英国3'
-      - '🇬🇧 英国4'
-      - '🇻🇳 越南1'
-      - '🇻🇳 越南2'
-      - '🇻🇳 越南3'
-      - '🇹🇭 泰国1'
-      - '🇹🇭 泰国2'
-      - '🇹🇭 泰国3'
-      - '🇷🇺 俄罗斯1'
-      - '🇷🇺 俄罗斯2'
-      - '🇷🇺 俄罗斯3'
-
-  - name: '⚡️ 自动选择'
-    type: url-test
-    url: 'http://cp.cloudflare.com/generate_204'
-    interval: 300
-    tolerance: 50
-    proxies:
-      - '🇭🇰 香港1'
-      - '🇭🇰 香港2'
-      - '🇭🇰 香港3'
-      - '🇭🇰 香港4'
-      - '🇭🇰 香港5'
-      - '🇭🇰 香港6'
-      - '🇭🇰 香港7'
-      - '🇭🇰 香港8'
-      - '🇯🇵 日本1'
-      - '🇯🇵 日本2'
-      - '🇯🇵 日本3'
-      - '🇯🇵 日本4'
-      - '🇯🇵 日本5'
-      - '🇯🇵 日本6'
-      - '🇺🇸 美国1'
-      - '🇺🇸 美国2'
-      - '🇺🇸 美国3'
-      - '🇺🇸 美国4'
-      - '🇺🇸 美国5'
-      - '🇺🇸 美国6'
-      - '🇸🇬 新加坡1'
-      - '🇸🇬 新加坡2'
-      - '🇸🇬 新加坡3'
-      - '🇸🇬 新加坡4'
-      - '🇸🇬 新加坡5'
-      - '🇰🇷 韩国1'
-      - '🇰🇷 韩国2'
-      - '🇰🇷 韩国3'
-      - '🇰🇷 韩国4'
-      - '🇬🇧 英国1'
-      - '🇬🇧 英国2'
-      - '🇬🇧 英国3'
-      - '🇬🇧 英国4'
-      - '🇻🇳 越南1'
-      - '🇻🇳 越南2'
-      - '🇻🇳 越南3'
-      - '🇹🇭 泰国1'
-      - '🇹🇭 泰国2'
-      - '🇹🇭 泰国3'
-      - '🇷🇺 俄罗斯1'
-      - '🇷🇺 俄罗斯2'
-      - '🇷🇺 俄罗斯3'
-
-  - name: '🛑 故障转移'
-    type: fallback
-    url: 'http://cp.cloudflare.com/generate_204'
-    interval: 300
-    proxies:
-      - '🇭🇰 香港1'
-      - '🇭🇰 香港2'
-      - '🇭🇰 香港3'
-      - '🇭🇰 香港4'
-      - '🇭🇰 香港5'
-      - '🇭🇰 香港6'
-      - '🇭🇰 香港7'
-      - '🇭🇰 香港8'
-      - '🇯🇵 日本1'
-      - '🇯🇵 日本2'
-      - '🇯🇵 日本3'
-      - '🇯🇵 日本4'
-      - '🇯🇵 日本5'
-      - '🇯🇵 日本6'
-      - '🇺🇸 美国1'
-      - '🇺🇸 美国2'
-      - '🇺🇸 美国3'
-      - '🇺🇸 美国4'
-      - '🇺🇸 美国5'
-      - '🇺🇸 美国6'
-      - '🇸🇬 新加坡1'
-      - '🇸🇬 新加坡2'
-      - '🇸🇬 新加坡3'
-      - '🇸🇬 新加坡4'
-      - '🇸🇬 新加坡5'
-      - '🇰🇷 韩国1'
-      - '🇰🇷 韩国2'
-      - '🇰🇷 韩国3'
-      - '🇰🇷 韩国4'
-      - '🇬🇧 英国1'
-      - '🇬🇧 英国2'
-      - '🇬🇧 英国3'
-      - '🇬🇧 英国4'
-      - '🇻🇳 越南1'
-      - '🇻🇳 越南2'
-      - '🇻🇳 越南3'
-      - '🇹🇭 泰国1'
-      - '🇹🇭 泰国2'
-      - '🇹🇭 泰国3'
-      - '🇷🇺 俄罗斯1'
-      - '🇷🇺 俄罗斯2'
-      - '🇷🇺 俄罗斯3'
-
-  - name: '🇭🇰 香港节点'
-    type: select
-    proxies:
-      - '🇭🇰 香港1'
-      - '🇭🇰 香港2'
-      - '🇭🇰 香港3'
-      - '🇭🇰 香港4'
-      - '🇭🇰 香港5'
-      - '🇭🇰 香港6'
-      - '🇭🇰 香港7'
-      - '🇭🇰 香港8'
-
-  - name: '🇯🇵 日本节点'
-    type: select
-    proxies:
-      - '🇯🇵 日本1'
-      - '🇯🇵 日本2'
-      - '🇯🇵 日本3'
-      - '🇯🇵 日本4'
-      - '🇯🇵 日本5'
-      - '🇯🇵 日本6'
-
-  - name: '🇺🇸 美国节点'
-    type: select
-    proxies:
-      - '🇺🇸 美国1'
-      - '🇺🇸 美国2'
-      - '🇺🇸 美国3'
-      - '🇺🇸 美国4'
-      - '🇺🇸 美国5'
-      - '🇺🇸 美国6'
-
-  - name: '🇸🇬 新加坡节点'
-    type: select
-    proxies:
-      - '🇸🇬 新加坡1'
-      - '🇸🇬 新加坡2'
-      - '🇸🇬 新加坡3'
-      - '🇸🇬 新加坡4'
-      - '🇸🇬 新加坡5'
-
-  - name: '🇰🇷 韩国节点'
-    type: select
-    proxies:
-      - '🇰🇷 韩国1'
-      - '🇰🇷 韩国2'
-      - '🇰🇷 韩国3'
-      - '🇰🇷 韩国4'
-
-  - name: '🇬🇧 英国节点'
-    type: select
-    proxies:
-      - '🇬🇧 英国1'
-      - '🇬🇧 英国2'
-      - '🇬🇧 英国3'
-      - '🇬🇧 英国4'
-
-  - name: '🇻🇳 越南节点'
-    type: select
-    proxies:
-      - '🇻🇳 越南1'
-      - '🇻🇳 越南2'
-      - '🇻🇳 越南3'
-
-  - name: '🇹🇭 泰国节点'
-    type: select
-    proxies:
-      - '🇹🇭 泰国1'
-      - '🇹🇭 泰国2'
-      - '🇹🇭 泰国3'
-
-  - name: '🇷🇺 俄罗斯节点'
-    type: select
-    proxies:
-      - '🇷🇺 俄罗斯1'
-      - '🇷🇺 俄罗斯2'
-      - '🇷🇺 俄罗斯3'
-
-  - name: '🇨🇳 国内直连'
-    type: select
-    proxies:
-      - '剩余流量：299.23 GB'
-      - '距离下次重置剩余：14 天'
-      - '套餐到期：2026-02-15'
-      - '国内地址：hsy.浙地珠宝.com'
-
-  - name: '🌍 全球直连'
-    type: select
-    proxies:
-      - DIRECT
-
+    - { name: 火烧云, type: select, proxies: [自动选择, 故障转移, '剩余流量：299.23 GB', '距离下次重置剩余：14 天', 套餐到期：2026-02-15, 国内地址：hsy.浙地珠宝.com, 香港1, 香港2, 香港3, 香港4, 香港5, 香港6, 香港7, 香港8, 台湾1, 台湾2, 台湾3, 台湾4, 台湾5, 日本1, 日本2, 日本3, 日本4, 日本5, 日本6, 美国1, 美国2, 美国3, 美国4, 美国5, 美国6, 新加坡1, 新加坡2, 新加坡3, 新加坡4, 新加坡5, 韩国1, 韩国2, 韩国3, 韩国4, 英国1, 英国2, 英国3, 英国4, 越南1, 越南2, 越南3, 泰国1, 泰国2, 泰国3, 俄罗斯1, 俄罗斯2, 俄罗斯3, 俄罗斯4] }
+    - { name: 自动选择, type: url-test, proxies: ['剩余流量：299.23 GB', '距离下次重置剩余：14 天', 套餐到期：2026-02-15, 国内地址：hsy.浙地珠宝.com, 香港1, 香港2, 香港3, 香港4, 香港5, 香港6, 香港7, 香港8, 台湾1, 台湾2, 台湾3, 台湾4, 台湾5, 日本1, 日本2, 日本3, 日本4, 日本5, 日本6, 美国1, 美国2, 美国3, 美国4, 美国5, 美国6, 新加坡1, 新加坡2, 新加坡3, 新加坡4, 新加坡5, 韩国1, 韩国2, 韩国3, 韩国4, 英国1, 英国2, 英国3, 英国4, 越南1, 越南2, 越南3, 泰国1, 泰国2, 泰国3, 俄罗斯1, 俄罗斯2, 俄罗斯3, 俄罗斯4], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: 故障转移, type: fallback, proxies: ['剩余流量：299.23 GB', '距离下次重置剩余：14 天', 套餐到期：2026-02-15, 国内地址：hsy.浙地珠宝.com, 香港1, 香港2, 香港3, 香港4, 香港5, 香港6, 香港7, 香港8, 台湾1, 台湾2, 台湾3, 台湾4, 台湾5, 日本1, 日本2, 日本3, 日本4, 日本5, 日本6, 美国1, 美国2, 美国3, 美国4, 美国5, 美国6, 新加坡1, 新加坡2, 新加坡3, 新加坡4, 新加坡5, 韩国1, 韩国2, 韩国3, 韩国4, 英国1, 英国2, 英国3, 英国4, 越南1, 越南2, 越南3, 泰国1, 泰国2, 泰国3, 俄罗斯1, 俄罗斯2, 俄罗斯3, 俄罗斯4], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
 rules:
-  # Apple 服务直连或代理（根据实际网络情况调整）
-  - 'DOMAIN-SUFFIX,apple.com,🌍 全球直连'
-  - 'DOMAIN-SUFFIX,apple-cloudkit.com,🌍 全球直连'
-  - 'DOMAIN-SUFFIX,apple-mapkit.com,🌍 全球直连'
-  - 'DOMAIN-SUFFIX,appstore.com,🌍 全球直连'
-  - 'DOMAIN-SUFFIX,icloud.com,🌍 全球直连'
-  - 'DOMAIN-SUFFIX,icloud-content.com,🌍 全球直连'
-  - 'DOMAIN-SUFFIX,cdn-apple.com,🌍 全球直连'
-  - 'DOMAIN-KEYWORD,apple,🌍 全球直连'
-
-  # Microsoft 服务直连
-  - 'DOMAIN-SUFFIX,microsoft.com,🌍 全球直连'
-  - 'DOMAIN-SUFFIX,msftauth.net,🌍 全球直连'
-  - 'DOMAIN-SUFFIX,msftauth.com,🌍 全球直连'
-  - 'DOMAIN-SUFFIX,skype.com,🌍 全球直连'
-  - 'DOMAIN-SUFFIX,office.com,🌍 全球直连'
-  - 'DOMAIN-SUFFIX,onedrive.com,🌍 全球直连'
-  - 'DOMAIN-KEYWORD,msft,🌍 全球直连'
-
-  # 国内主流直连 (Baidu, Tencent, Alibaba, NetEase, Xiaomi, Huawei etc.)
-  - 'DOMAIN-SUFFIX,baidu.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,baidustatic.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,qq.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,qqmail.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,gtimg.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,myqcloud.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,taobao.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,tmall.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,alibaba.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,alicdn.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,alikunlun.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,taobaocdn.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,163.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,126.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,netease.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,youdao.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,xiaomi.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,mi.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,huawei.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,hicloud.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,lenovo.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,360.cn,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,360.cn,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,sohu.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,sina.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,weibo.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,douban.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,ifeng.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,gtimg.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,cdnetworks.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,ctrip.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,58.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,bilibili.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,acfun.cn,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,zhihu.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,lagou.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,meituan.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,ele.me,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,xiaoyuanhao.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,kaola.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,pinduoduo.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,umeng.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,10010.com,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,189.cn,🇨🇳 国内直连'
-  - 'DOMAIN-SUFFIX,10086.cn,🇨🇳 国内直连'
-
-  # 国内广告屏蔽 (AdBlock)
-  - 'DOMAIN-KEYWORD,adobelog,🎯 代理模式选择' # Adobe 日志
-  - 'DOMAIN-KEYWORD,adobe.io,🎯 代理模式选择' # Adobe 服务
-  - 'DOMAIN-KEYWORD,adsafe,🎯 代理模式选择'
-  - 'DOMAIN-KEYWORD,admaster,🎯 代理模式选择'
-  - 'DOMAIN-KEYWORD,adwhirl,🎯 代理模式选择'
-  - 'DOMAIN-KEYWORD,adwords,🎯 代理模式选择'
-  - 'DOMAIN-KEYWORD,baiduad,🎯 代理模式选择'
-  - 'DOMAIN-KEYWORD,cmos,🎯 代理模式选择'
-  - 'DOMAIN-KEYWORD,doubleclick,🎯 代理模式选择'
-  - 'DOMAIN-KEYWORD,googleadservices,🎯 代理模式选择'
-  - 'DOMAIN-KEYWORD,googlead,🎯 代理模式选择'
-  - 'DOMAIN-KEYWORD,googlesyndication,🎯 代理模式选择'
-  - 'DOMAIN-KEYWORD,immersion,🎯 代理模式选择'
-  - 'DOMAIN-KEYWORD,infomous,🎯 代理模式选择'
-  - 'DOMAIN-KEYWORD,leadbolt,🎯 代理模式选择'
-  - 'DOMAIN-KEYWORD,log.360.cn,🎯 代理模式选择'
-  - 'DOMAIN-KEYWORD,mobads,🎯 代理模式选择'
-  - 'DOMAIN-KEYWORD,mopub,🎯 代理模式选择'
-  - 'DOMAIN-KEYWORD,supersonicads,🎯 代理模式选择'
-  - 'DOMAIN-KEYWORD,umengx,🎯 代理模式选择'
-  - 'DOMAIN-KEYWORD,wanpu,🎯 代理模式选择'
-  - 'DOMAIN-KEYWORD,yieldmanager,🎯 代理模式选择'
-  - 'DOMAIN-SUFFIX,adsafeprotected.com,🎯 代理模式选择'
-  - 'DOMAIN-SUFFIX,adserver.yahoo.com,🎯 代理模式选择'
-  - 'DOMAIN-SUFFIX,doubleclick.net,🎯 代理模式选择'
-  - 'DOMAIN-SUFFIX,googlesyndication.com,🎯 代理模式选择'
-  - 'DOMAIN-SUFFIX,googletagservices.com,🎯 代理模式选择'
-  - 'DOMAIN-SUFFIX,googletagmanager.com,🎯 代理模式选择'
-  - 'DOMAIN-SUFFIX,adservice.google.com,🎯 代理模式选择'
-  - 'DOMAIN-SUFFIX,adservice.googleadservices.com,🎯 代理模式选择'
-  - 'DOMAIN-SUFFIX,adservice.googleadservices.com,🎯 代理模式选择'
-  - 'DOMAIN-SUFFIX,pagead.googleadservices.com,🎯 代理模式选择'
-  - 'DOMAIN-SUFFIX,pagead2.googlesyndication.com,🎯 代理模式选择'
-  - 'DOMAIN-SUFFIX,securepubads.g.doubleclick.net,🎯 代理模式选择'
-
-  # 国际流媒体与网站 (Proxy)
-  - 'DOMAIN-KEYWORD,youtube,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,youtu.be,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,twitch.tv,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,netflix.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,disneyplus.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,hulu.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,spotify.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,dropbox.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,slack.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,notion.so,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,office.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,office365.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,visualstudio.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,github.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,githubusercontent.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,githubapp.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,amazon.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,amazonaws.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,appspot.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,googleapis.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,gstatic.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,ggpht.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,googlevideo.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,googleusercontent.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,google.com.hk,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,google.com.tw,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,t.co,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,cdninstagram.com,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,whatsapp.net,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,pscp.tv,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,periscope.tv,🚀 节点选择'
-  - 'DOMAIN-SUFFIX,twimg.com,🚀 节点选择'
-
-  # IP 地理位置规则
-  - 'GEOIP,LAN,🌍 全球直连'
-  - 'GEOIP,CN,🇨🇳 国内直连'
-  - 'GEOIP,APPLE,🌍 全球直连' # Apple 的 CDN 可能不在 CN 范围内，单独直连
-
-  # 最终兜底规则
-  - 'MATCH,🎯 代理模式选择'
-  - 'MATCH,🎯 代理模式选择'
+    - 'DOMAIN,onehsy.yeniudsss.us,DIRECT'
+    - 'DOMAIN-SUFFIX,services.googleapis.cn,火烧云'
+    - 'DOMAIN-SUFFIX,xn--ngstr-lra8j.com,火烧云'
+    - 'DOMAIN,safebrowsing.urlsec.qq.com,DIRECT'
+    - 'DOMAIN,safebrowsing.googleapis.com,DIRECT'
+    - 'DOMAIN,developer.apple.com,火烧云'
+    - 'DOMAIN-SUFFIX,digicert.com,火烧云'
+    - 'DOMAIN,ocsp.apple.com,火烧云'
+    - 'DOMAIN,ocsp.comodoca.com,火烧云'
+    - 'DOMAIN,ocsp.usertrust.com,火烧云'
+    - 'DOMAIN,ocsp.sectigo.com,火烧云'
+    - 'DOMAIN,ocsp.verisign.net,火烧云'
+    - 'DOMAIN-SUFFIX,apple-dns.net,火烧云'
+    - 'DOMAIN,testflight.apple.com,火烧云'
+    - 'DOMAIN,sandbox.itunes.apple.com,火烧云'
+    - 'DOMAIN,itunes.apple.com,火烧云'
+    - 'DOMAIN-SUFFIX,apps.apple.com,火烧云'
+    - 'DOMAIN-SUFFIX,blobstore.apple.com,火烧云'
+    - 'DOMAIN,cvws.icloud-content.com,火烧云'
+    - 'DOMAIN-SUFFIX,mzstatic.com,DIRECT'
+    - 'DOMAIN-SUFFIX,itunes.apple.com,DIRECT'
+    - 'DOMAIN-SUFFIX,icloud.com,DIRECT'
+    - 'DOMAIN-SUFFIX,icloud-content.com,DIRECT'
+    - 'DOMAIN-SUFFIX,me.com,DIRECT'
+    - 'DOMAIN-SUFFIX,aaplimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,cdn20.com,DIRECT'
+    - 'DOMAIN-SUFFIX,cdn-apple.com,DIRECT'
+    - 'DOMAIN-SUFFIX,akadns.net,DIRECT'
+    - 'DOMAIN-SUFFIX,akamaiedge.net,DIRECT'
+    - 'DOMAIN-SUFFIX,edgekey.net,DIRECT'
+    - 'DOMAIN-SUFFIX,mwcloudcdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,mwcname.com,DIRECT'
+    - 'DOMAIN-SUFFIX,apple.com,DIRECT'
+    - 'DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT'
+    - 'DOMAIN-SUFFIX,apple-mapkit.com,DIRECT'
+    - 'DOMAIN-SUFFIX,126.com,DIRECT'
+    - 'DOMAIN-SUFFIX,126.net,DIRECT'
+    - 'DOMAIN-SUFFIX,127.net,DIRECT'
+    - 'DOMAIN-SUFFIX,163.com,DIRECT'
+    - 'DOMAIN-SUFFIX,360buyimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,36kr.com,DIRECT'
+    - 'DOMAIN-SUFFIX,acfun.tv,DIRECT'
+    - 'DOMAIN-SUFFIX,air-matters.com,DIRECT'
+    - 'DOMAIN-SUFFIX,aixifan.com,DIRECT'
+    - 'DOMAIN-KEYWORD,alicdn,DIRECT'
+    - 'DOMAIN-KEYWORD,alipay,DIRECT'
+    - 'DOMAIN-KEYWORD,taobao,DIRECT'
+    - 'DOMAIN-SUFFIX,amap.com,DIRECT'
+    - 'DOMAIN-SUFFIX,autonavi.com,DIRECT'
+    - 'DOMAIN-KEYWORD,baidu,DIRECT'
+    - 'DOMAIN-SUFFIX,bdimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,bdstatic.com,DIRECT'
+    - 'DOMAIN-SUFFIX,bilibili.com,DIRECT'
+    - 'DOMAIN-SUFFIX,bilivideo.com,DIRECT'
+    - 'DOMAIN-SUFFIX,caiyunapp.com,DIRECT'
+    - 'DOMAIN-SUFFIX,clouddn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,cnbeta.com,DIRECT'
+    - 'DOMAIN-SUFFIX,cnbetacdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,cootekservice.com,DIRECT'
+    - 'DOMAIN-SUFFIX,csdn.net,DIRECT'
+    - 'DOMAIN-SUFFIX,ctrip.com,DIRECT'
+    - 'DOMAIN-SUFFIX,dgtle.com,DIRECT'
+    - 'DOMAIN-SUFFIX,dianping.com,DIRECT'
+    - 'DOMAIN-SUFFIX,douban.com,DIRECT'
+    - 'DOMAIN-SUFFIX,doubanio.com,DIRECT'
+    - 'DOMAIN-SUFFIX,duokan.com,DIRECT'
+    - 'DOMAIN-SUFFIX,easou.com,DIRECT'
+    - 'DOMAIN-SUFFIX,ele.me,DIRECT'
+    - 'DOMAIN-SUFFIX,feng.com,DIRECT'
+    - 'DOMAIN-SUFFIX,fir.im,DIRECT'
+    - 'DOMAIN-SUFFIX,frdic.com,DIRECT'
+    - 'DOMAIN-SUFFIX,g-cores.com,DIRECT'
+    - 'DOMAIN-SUFFIX,godic.net,DIRECT'
+    - 'DOMAIN-SUFFIX,gtimg.com,DIRECT'
+    - 'DOMAIN,cdn.hockeyapp.net,DIRECT'
+    - 'DOMAIN-SUFFIX,hongxiu.com,DIRECT'
+    - 'DOMAIN-SUFFIX,hxcdn.net,DIRECT'
+    - 'DOMAIN-SUFFIX,iciba.com,DIRECT'
+    - 'DOMAIN-SUFFIX,ifeng.com,DIRECT'
+    - 'DOMAIN-SUFFIX,ifengimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,ipip.net,DIRECT'
+    - 'DOMAIN-SUFFIX,iqiyi.com,DIRECT'
+    - 'DOMAIN-SUFFIX,jd.com,DIRECT'
+    - 'DOMAIN-SUFFIX,jianshu.com,DIRECT'
+    - 'DOMAIN-SUFFIX,knewone.com,DIRECT'
+    - 'DOMAIN-SUFFIX,le.com,DIRECT'
+    - 'DOMAIN-SUFFIX,lecloud.com,DIRECT'
+    - 'DOMAIN-SUFFIX,lemicp.com,DIRECT'
+    - 'DOMAIN-SUFFIX,licdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,luoo.net,DIRECT'
+    - 'DOMAIN-SUFFIX,meituan.com,DIRECT'
+    - 'DOMAIN-SUFFIX,meituan.net,DIRECT'
+    - 'DOMAIN-SUFFIX,mi.com,DIRECT'
+    - 'DOMAIN-SUFFIX,miaopai.com,DIRECT'
+    - 'DOMAIN-SUFFIX,microsoft.com,DIRECT'
+    - 'DOMAIN-SUFFIX,microsoftonline.com,DIRECT'
+    - 'DOMAIN-SUFFIX,miui.com,DIRECT'
+    - 'DOMAIN-SUFFIX,miwifi.com,DIRECT'
+    - 'DOMAIN-SUFFIX,mob.com,DIRECT'
+    - 'DOMAIN-SUFFIX,netease.com,DIRECT'
+    - 'DOMAIN-SUFFIX,office.com,DIRECT'
+    - 'DOMAIN-SUFFIX,office365.com,DIRECT'
+    - 'DOMAIN-KEYWORD,officecdn,DIRECT'
+    - 'DOMAIN-SUFFIX,oschina.net,DIRECT'
+    - 'DOMAIN-SUFFIX,ppsimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,pstatp.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qcloud.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qdaily.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qdmm.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qhimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qhres.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qidian.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qihucdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qiniu.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qiniucdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qiyipic.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qq.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qqurl.com,DIRECT'
+    - 'DOMAIN-SUFFIX,rarbg.to,DIRECT'
+    - 'DOMAIN-SUFFIX,ruguoapp.com,DIRECT'
+    - 'DOMAIN-SUFFIX,segmentfault.com,DIRECT'
+    - 'DOMAIN-SUFFIX,sinaapp.com,DIRECT'
+    - 'DOMAIN-SUFFIX,smzdm.com,DIRECT'
+    - 'DOMAIN-SUFFIX,snapdrop.net,DIRECT'
+    - 'DOMAIN-SUFFIX,sogou.com,DIRECT'
+    - 'DOMAIN-SUFFIX,sogoucdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,sohu.com,DIRECT'
+    - 'DOMAIN-SUFFIX,soku.com,DIRECT'
+    - 'DOMAIN-SUFFIX,speedtest.net,DIRECT'
+    - 'DOMAIN-SUFFIX,sspai.com,DIRECT'
+    - 'DOMAIN-SUFFIX,suning.com,DIRECT'
+    - 'DOMAIN-SUFFIX,taobao.com,DIRECT'
+    - 'DOMAIN-SUFFIX,tencent.com,DIRECT'
+    - 'DOMAIN-SUFFIX,tenpay.com,DIRECT'
+    - 'DOMAIN-SUFFIX,tianyancha.com,DIRECT'
+    - 'DOMAIN-SUFFIX,tmall.com,DIRECT'
+    - 'DOMAIN-SUFFIX,tudou.com,DIRECT'
+    - 'DOMAIN-SUFFIX,umetrip.com,DIRECT'
+    - 'DOMAIN-SUFFIX,upaiyun.com,DIRECT'
+    - 'DOMAIN-SUFFIX,upyun.com,DIRECT'
+    - 'DOMAIN-SUFFIX,veryzhun.com,DIRECT'
+    - 'DOMAIN-SUFFIX,weather.com,DIRECT'
+    - 'DOMAIN-SUFFIX,weibo.com,DIRECT'
+    - 'DOMAIN-SUFFIX,xiami.com,DIRECT'
+    - 'DOMAIN-SUFFIX,xiami.net,DIRECT'
+    - 'DOMAIN-SUFFIX,xiaomicp.com,DIRECT'
+    - 'DOMAIN-SUFFIX,ximalaya.com,DIRECT'
+    - 'DOMAIN-SUFFIX,xmcdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,xunlei.com,DIRECT'
+    - 'DOMAIN-SUFFIX,yhd.com,DIRECT'
+    - 'DOMAIN-SUFFIX,yihaodianimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,yinxiang.com,DIRECT'
+    - 'DOMAIN-SUFFIX,ykimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,youdao.com,DIRECT'
+    - 'DOMAIN-SUFFIX,youku.com,DIRECT'
+    - 'DOMAIN-SUFFIX,zealer.com,DIRECT'
+    - 'DOMAIN-SUFFIX,zhihu.com,DIRECT'
+    - 'DOMAIN-SUFFIX,zhimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,zimuzu.tv,DIRECT'
+    - 'DOMAIN-SUFFIX,zoho.com,DIRECT'
+    - 'DOMAIN-KEYWORD,amazon,火烧云'
+    - 'DOMAIN-KEYWORD,google,火烧云'
+    - 'DOMAIN-KEYWORD,gmail,火烧云'
+    - 'DOMAIN-KEYWORD,youtube,火烧云'
+    - 'DOMAIN-KEYWORD,facebook,火烧云'
+    - 'DOMAIN-SUFFIX,fb.me,火烧云'
+    - 'DOMAIN-SUFFIX,fbcdn.net,火烧云'
+    - 'DOMAIN-KEYWORD,twitter,火烧云'
+    - 'DOMAIN-KEYWORD,instagram,火烧云'
+    - 'DOMAIN-KEYWORD,dropbox,火烧云'
+    - 'DOMAIN-SUFFIX,twimg.com,火烧云'
+    - 'DOMAIN-KEYWORD,blogspot,火烧云'
+    - 'DOMAIN-SUFFIX,youtu.be,火烧云'
+    - 'DOMAIN-KEYWORD,whatsapp,火烧云'
+    - 'DOMAIN-KEYWORD,admarvel,REJECT'
+    - 'DOMAIN-KEYWORD,admaster,REJECT'
+    - 'DOMAIN-KEYWORD,adsage,REJECT'
+    - 'DOMAIN-KEYWORD,adsmogo,REJECT'
+    - 'DOMAIN-KEYWORD,adsrvmedia,REJECT'
+    - 'DOMAIN-KEYWORD,adwords,REJECT'
+    - 'DOMAIN-KEYWORD,adservice,REJECT'
+    - 'DOMAIN-SUFFIX,appsflyer.com,REJECT'
+    - 'DOMAIN-KEYWORD,domob,REJECT'
+    - 'DOMAIN-SUFFIX,doubleclick.net,REJECT'
+    - 'DOMAIN-KEYWORD,duomeng,REJECT'
+    - 'DOMAIN-KEYWORD,dwtrack,REJECT'
+    - 'DOMAIN-KEYWORD,guanggao,REJECT'
+    - 'DOMAIN-KEYWORD,lianmeng,REJECT'
+    - 'DOMAIN-SUFFIX,mmstat.com,REJECT'
+    - 'DOMAIN-KEYWORD,mopub,REJECT'
+    - 'DOMAIN-KEYWORD,omgmta,REJECT'
+    - 'DOMAIN-KEYWORD,openx,REJECT'
+    - 'DOMAIN-KEYWORD,partnerad,REJECT'
+    - 'DOMAIN-KEYWORD,pingfore,REJECT'
+    - 'DOMAIN-KEYWORD,supersonicads,REJECT'
+    - 'DOMAIN-KEYWORD,uedas,REJECT'
+    - 'DOMAIN-KEYWORD,umeng,REJECT'
+    - 'DOMAIN-KEYWORD,usage,REJECT'
+    - 'DOMAIN-SUFFIX,vungle.com,REJECT'
+    - 'DOMAIN-KEYWORD,wlmonitor,REJECT'
+    - 'DOMAIN-KEYWORD,zjtoolbar,REJECT'
+    - 'DOMAIN-SUFFIX,9to5mac.com,火烧云'
+    - 'DOMAIN-SUFFIX,abpchina.org,火烧云'
+    - 'DOMAIN-SUFFIX,adblockplus.org,火烧云'
+    - 'DOMAIN-SUFFIX,adobe.com,火烧云'
+    - 'DOMAIN-SUFFIX,akamaized.net,火烧云'
+    - 'DOMAIN-SUFFIX,alfredapp.com,火烧云'
+    - 'DOMAIN-SUFFIX,amplitude.com,火烧云'
+    - 'DOMAIN-SUFFIX,ampproject.org,火烧云'
+    - 'DOMAIN-SUFFIX,android.com,火烧云'
+    - 'DOMAIN-SUFFIX,angularjs.org,火烧云'
+    - 'DOMAIN-SUFFIX,aolcdn.com,火烧云'
+    - 'DOMAIN-SUFFIX,apkpure.com,火烧云'
+    - 'DOMAIN-SUFFIX,appledaily.com,火烧云'
+    - 'DOMAIN-SUFFIX,appshopper.com,火烧云'
+    - 'DOMAIN-SUFFIX,appspot.com,火烧云'
+    - 'DOMAIN-SUFFIX,arcgis.com,火烧云'
+    - 'DOMAIN-SUFFIX,archive.org,火烧云'
+    - 'DOMAIN-SUFFIX,armorgames.com,火烧云'
+    - 'DOMAIN-SUFFIX,aspnetcdn.com,火烧云'
+    - 'DOMAIN-SUFFIX,att.com,火烧云'
+    - 'DOMAIN-SUFFIX,awsstatic.com,火烧云'
+    - 'DOMAIN-SUFFIX,azureedge.net,火烧云'
+    - 'DOMAIN-SUFFIX,azurewebsites.net,火烧云'
+    - 'DOMAIN-SUFFIX,bing.com,火烧云'
+    - 'DOMAIN-SUFFIX,bintray.com,火烧云'
+    - 'DOMAIN-SUFFIX,bit.com,火烧云'
+    - 'DOMAIN-SUFFIX,bit.ly,火烧云'
+    - 'DOMAIN-SUFFIX,bitbucket.org,火烧云'
+    - 'DOMAIN-SUFFIX,bjango.com,火烧云'
+    - 'DOMAIN-SUFFIX,bkrtx.com,火烧云'
+    - 'DOMAIN-SUFFIX,blog.com,火烧云'
+    - 'DOMAIN-SUFFIX,blogcdn.com,火烧云'
+    - 'DOMAIN-SUFFIX,blogger.com,火烧云'
+    - 'DOMAIN-SUFFIX,blogsmithmedia.com,火烧云'
+    - 'DOMAIN-SUFFIX,blogspot.com,火烧云'
+    - 'DOMAIN-SUFFIX,blogspot.hk,火烧云'
+    - 'DOMAIN-SUFFIX,bloomberg.com,火烧云'
+    - 'DOMAIN-SUFFIX,box.com,火烧云'
+    - 'DOMAIN-SUFFIX,box.net,火烧云'
+    - 'DOMAIN-SUFFIX,cachefly.net,火烧云'
+    - 'DOMAIN-SUFFIX,chromium.org,火烧云'
+    - 'DOMAIN-SUFFIX,cl.ly,火烧云'
+    - 'DOMAIN-SUFFIX,cloudflare.com,火烧云'
+    - 'DOMAIN-SUFFIX,cloudfront.net,火烧云'
+    - 'DOMAIN-SUFFIX,cloudmagic.com,火烧云'
+    - 'DOMAIN-SUFFIX,cmail19.com,火烧云'
+    - 'DOMAIN-SUFFIX,cnet.com,火烧云'
+    - 'DOMAIN-SUFFIX,cocoapods.org,火烧云'
+    - 'DOMAIN-SUFFIX,comodoca.com,火烧云'
+    - 'DOMAIN-SUFFIX,crashlytics.com,火烧云'
+    - 'DOMAIN-SUFFIX,culturedcode.com,火烧云'
+    - 'DOMAIN-SUFFIX,d.pr,火烧云'
+    - 'DOMAIN-SUFFIX,danilo.to,火烧云'
+    - 'DOMAIN-SUFFIX,dayone.me,火烧云'
+    - 'DOMAIN-SUFFIX,db.tt,火烧云'
+    - 'DOMAIN-SUFFIX,deskconnect.com,火烧云'
+    - 'DOMAIN-SUFFIX,disq.us,火烧云'
+    - 'DOMAIN-SUFFIX,disqus.com,火烧云'
+    - 'DOMAIN-SUFFIX,disquscdn.com,火烧云'
+    - 'DOMAIN-SUFFIX,dnsimple.com,火烧云'
+    - 'DOMAIN-SUFFIX,docker.com,火烧云'
+    - 'DOMAIN-SUFFIX,dribbble.com,火烧云'
+    - 'DOMAIN-SUFFIX,droplr.com,火烧云'
+    - 'DOMAIN-SUFFIX,duckduckgo.com,火烧云'
+    - 'DOMAIN-SUFFIX,dueapp.com,火烧云'
+    - 'DOMAIN-SUFFIX,dytt8.net,火烧云'
+    - 'DOMAIN-SUFFIX,edgecastcdn.net,火烧云'
+    - 'DOMAIN-SUFFIX,edgekey.net,火烧云'
+    - 'DOMAIN-SUFFIX,edgesuite.net,火烧云'
+    - 'DOMAIN-SUFFIX,engadget.com,火烧云'
+    - 'DOMAIN-SUFFIX,entrust.net,火烧云'
+    - 'DOMAIN-SUFFIX,eurekavpt.com,火烧云'
+    - 'DOMAIN-SUFFIX,evernote.com,火烧云'
+    - 'DOMAIN-SUFFIX,fabric.io,火烧云'
+    - 'DOMAIN-SUFFIX,fast.com,火烧云'
+    - 'DOMAIN-SUFFIX,fastly.net,火烧云'
+    - 'DOMAIN-SUFFIX,fc2.com,火烧云'
+    - 'DOMAIN-SUFFIX,feedburner.com,火烧云'
+    - 'DOMAIN-SUFFIX,feedly.com,火烧云'
+    - 'DOMAIN-SUFFIX,feedsportal.com,火烧云'
+    - 'DOMAIN-SUFFIX,fiftythree.com,火烧云'
+    - 'DOMAIN-SUFFIX,firebaseio.com,火烧云'
+    - 'DOMAIN-SUFFIX,flexibits.com,火烧云'
+    - 'DOMAIN-SUFFIX,flickr.com,火烧云'
+    - 'DOMAIN-SUFFIX,flipboard.com,火烧云'
+    - 'DOMAIN-SUFFIX,g.co,火烧云'
+    - 'DOMAIN-SUFFIX,gabia.net,火烧云'
+    - 'DOMAIN-SUFFIX,geni.us,火烧云'
+    - 'DOMAIN-SUFFIX,gfx.ms,火烧云'
+    - 'DOMAIN-SUFFIX,ggpht.com,火烧云'
+    - 'DOMAIN-SUFFIX,ghostnoteapp.com,火烧云'
+    - 'DOMAIN-SUFFIX,git.io,火烧云'
+    - 'DOMAIN-KEYWORD,github,火烧云'
+    - 'DOMAIN-SUFFIX,globalsign.com,火烧云'
+    - 'DOMAIN-SUFFIX,gmodules.com,火烧云'
+    - 'DOMAIN-SUFFIX,godaddy.com,火烧云'
+    - 'DOMAIN-SUFFIX,golang.org,火烧云'
+    - 'DOMAIN-SUFFIX,gongm.in,火烧云'
+    - 'DOMAIN-SUFFIX,goo.gl,火烧云'
+    - 'DOMAIN-SUFFIX,goodreaders.com,火烧云'
+    - 'DOMAIN-SUFFIX,goodreads.com,火烧云'
+    - 'DOMAIN-SUFFIX,gravatar.com,火烧云'
+    - 'DOMAIN-SUFFIX,gstatic.com,火烧云'
+    - 'DOMAIN-SUFFIX,gvt0.com,火烧云'
+    - 'DOMAIN-SUFFIX,hockeyapp.net,火烧云'
+    - 'DOMAIN-SUFFIX,hotmail.com,火烧云'
+    - 'DOMAIN-SUFFIX,icons8.com,火烧云'
+    - 'DOMAIN-SUFFIX,ifixit.com,火烧云'
+    - 'DOMAIN-SUFFIX,ift.tt,火烧云'
+    - 'DOMAIN-SUFFIX,ifttt.com,火烧云'
+    - 'DOMAIN-SUFFIX,iherb.com,火烧云'
+    - 'DOMAIN-SUFFIX,imageshack.us,火烧云'
+    - 'DOMAIN-SUFFIX,img.ly,火烧云'
+    - 'DOMAIN-SUFFIX,imgur.com,火烧云'
+    - 'DOMAIN-SUFFIX,imore.com,火烧云'
+    - 'DOMAIN-SUFFIX,instapaper.com,火烧云'
+    - 'DOMAIN-SUFFIX,ipn.li,火烧云'
+    - 'DOMAIN-SUFFIX,is.gd,火烧云'
+    - 'DOMAIN-SUFFIX,issuu.com,火烧云'
+    - 'DOMAIN-SUFFIX,itgonglun.com,火烧云'
+    - 'DOMAIN-SUFFIX,itun.es,火烧云'
+    - 'DOMAIN-SUFFIX,ixquick.com,火烧云'
+    - 'DOMAIN-SUFFIX,j.mp,火烧云'
+    - 'DOMAIN-SUFFIX,js.revsci.net,火烧云'
+    - 'DOMAIN-SUFFIX,jshint.com,火烧云'
+    - 'DOMAIN-SUFFIX,jtvnw.net,火烧云'
+    - 'DOMAIN-SUFFIX,justgetflux.com,火烧云'
+    - 'DOMAIN-SUFFIX,kat.cr,火烧云'
+    - 'DOMAIN-SUFFIX,klip.me,火烧云'
+    - 'DOMAIN-SUFFIX,libsyn.com,火烧云'
+    - 'DOMAIN-SUFFIX,linkedin.com,火烧云'
+    - 'DOMAIN-SUFFIX,line-apps.com,火烧云'
+    - 'DOMAIN-SUFFIX,linode.com,火烧云'
+    - 'DOMAIN-SUFFIX,lithium.com,火烧云'
+    - 'DOMAIN-SUFFIX,littlehj.com,火烧云'
+    - 'DOMAIN-SUFFIX,live.com,火烧云'
+    - 'DOMAIN-SUFFIX,live.net,火烧云'
+    - 'DOMAIN-SUFFIX,livefilestore.com,火烧云'
+    - 'DOMAIN-SUFFIX,llnwd.net,火烧云'
+    - 'DOMAIN-SUFFIX,macid.co,火烧云'
+    - 'DOMAIN-SUFFIX,macromedia.com,火烧云'
+    - 'DOMAIN-SUFFIX,macrumors.com,火烧云'
+    - 'DOMAIN-SUFFIX,mashable.com,火烧云'
+    - 'DOMAIN-SUFFIX,mathjax.org,火烧云'
+    - 'DOMAIN-SUFFIX,medium.com,火烧云'
+    - 'DOMAIN-SUFFIX,mega.co.nz,火烧云'
+    - 'DOMAIN-SUFFIX,mega.nz,火烧云'
+    - 'DOMAIN-SUFFIX,megaupload.com,火烧云'
+    - 'DOMAIN-SUFFIX,microsofttranslator.com,火烧云'
+    - 'DOMAIN-SUFFIX,mindnode.com,火烧云'
+    - 'DOMAIN-SUFFIX,mobile01.com,火烧云'
+    - 'DOMAIN-SUFFIX,modmyi.com,火烧云'
+    - 'DOMAIN-SUFFIX,msedge.net,火烧云'
+    - 'DOMAIN-SUFFIX,myfontastic.com,火烧云'
+    - 'DOMAIN-SUFFIX,name.com,火烧云'
+    - 'DOMAIN-SUFFIX,nextmedia.com,火烧云'
+    - 'DOMAIN-SUFFIX,nsstatic.net,火烧云'
+    - 'DOMAIN-SUFFIX,nssurge.com,火烧云'
+    - 'DOMAIN-SUFFIX,nyt.com,火烧云'
+    - 'DOMAIN-SUFFIX,nytimes.com,火烧云'
+    - 'DOMAIN-SUFFIX,omnigroup.com,火烧云'
+    - 'DOMAIN-SUFFIX,onedrive.com,火烧云'
+    - 'DOMAIN-SUFFIX,onenote.com,火烧云'
+    - 'DOMAIN-SUFFIX,ooyala.com,火烧云'
+    - 'DOMAIN-SUFFIX,openvpn.net,火烧云'
+    - 'DOMAIN-SUFFIX,openwrt.org,火烧云'
+    - 'DOMAIN-SUFFIX,orkut.com,火烧云'
+    - 'DOMAIN-SUFFIX,osxdaily.com,火烧云'
+    - 'DOMAIN-SUFFIX,outlook.com,火烧云'
+    - 'DOMAIN-SUFFIX,ow.ly,火烧云'
+    - 'DOMAIN-SUFFIX,paddleapi.com,火烧云'
+    - 'DOMAIN-SUFFIX,parallels.com,火烧云'
+    - 'DOMAIN-SUFFIX,parse.com,火烧云'
+    - 'DOMAIN-SUFFIX,pdfexpert.com,火烧云'
+    - 'DOMAIN-SUFFIX,periscope.tv,火烧云'
+    - 'DOMAIN-SUFFIX,pinboard.in,火烧云'
+    - 'DOMAIN-SUFFIX,pinterest.com,火烧云'
+    - 'DOMAIN-SUFFIX,pixelmator.com,火烧云'
+    - 'DOMAIN-SUFFIX,pixiv.net,火烧云'
+    - 'DOMAIN-SUFFIX,playpcesor.com,火烧云'
+    - 'DOMAIN-SUFFIX,playstation.com,火烧云'
+    - 'DOMAIN-SUFFIX,playstation.com.hk,火烧云'
+    - 'DOMAIN-SUFFIX,playstation.net,火烧云'
+    - 'DOMAIN-SUFFIX,playstationnetwork.com,火烧云'
+    - 'DOMAIN-SUFFIX,pushwoosh.com,火烧云'
+    - 'DOMAIN-SUFFIX,rime.im,火烧云'
+    - 'DOMAIN-SUFFIX,servebom.com,火烧云'
+    - 'DOMAIN-SUFFIX,sfx.ms,火烧云'
+    - 'DOMAIN-SUFFIX,shadowsocks.org,火烧云'
+    - 'DOMAIN-SUFFIX,sharethis.com,火烧云'
+    - 'DOMAIN-SUFFIX,shazam.com,火烧云'
+    - 'DOMAIN-SUFFIX,skype.com,火烧云'
+    - 'DOMAIN-SUFFIX,smartdns火烧云.com,火烧云'
+    - 'DOMAIN-SUFFIX,smartmailcloud.com,火烧云'
+    - 'DOMAIN-SUFFIX,sndcdn.com,火烧云'
+    - 'DOMAIN-SUFFIX,sony.com,火烧云'
+    - 'DOMAIN-SUFFIX,soundcloud.com,火烧云'
+    - 'DOMAIN-SUFFIX,sourceforge.net,火烧云'
+    - 'DOMAIN-SUFFIX,spotify.com,火烧云'
+    - 'DOMAIN-SUFFIX,squarespace.com,火烧云'
+    - 'DOMAIN-SUFFIX,sstatic.net,火烧云'
+    - 'DOMAIN-SUFFIX,st.luluku.pw,火烧云'
+    - 'DOMAIN-SUFFIX,stackoverflow.com,火烧云'
+    - 'DOMAIN-SUFFIX,startpage.com,火烧云'
+    - 'DOMAIN-SUFFIX,staticflickr.com,火烧云'
+    - 'DOMAIN-SUFFIX,steamcommunity.com,火烧云'
+    - 'DOMAIN-SUFFIX,symauth.com,火烧云'
+    - 'DOMAIN-SUFFIX,symcb.com,火烧云'
+    - 'DOMAIN-SUFFIX,symcd.com,火烧云'
+    - 'DOMAIN-SUFFIX,tapbots.com,火烧云'
+    - 'DOMAIN-SUFFIX,tapbots.net,火烧云'
+    - 'DOMAIN-SUFFIX,tdesktop.com,火烧云'
+    - 'DOMAIN-SUFFIX,techcrunch.com,火烧云'
+    - 'DOMAIN-SUFFIX,techsmith.com,火烧云'
+    - 'DOMAIN-SUFFIX,thepiratebay.org,火烧云'
+    - 'DOMAIN-SUFFIX,theverge.com,火烧云'
+    - 'DOMAIN-SUFFIX,time.com,火烧云'
+    - 'DOMAIN-SUFFIX,timeinc.net,火烧云'
+    - 'DOMAIN-SUFFIX,tiny.cc,火烧云'
+    - 'DOMAIN-SUFFIX,tinypic.com,火烧云'
+    - 'DOMAIN-SUFFIX,tmblr.co,火烧云'
+    - 'DOMAIN-SUFFIX,todoist.com,火烧云'
+    - 'DOMAIN-SUFFIX,trello.com,火烧云'
+    - 'DOMAIN-SUFFIX,trustasiassl.com,火烧云'
+    - 'DOMAIN-SUFFIX,tumblr.co,火烧云'
+    - 'DOMAIN-SUFFIX,tumblr.com,火烧云'
+    - 'DOMAIN-SUFFIX,tweetdeck.com,火烧云'
+    - 'DOMAIN-SUFFIX,tweetmarker.net,火烧云'
+    - 'DOMAIN-SUFFIX,twitch.tv,火烧云'
+    - 'DOMAIN-SUFFIX,txmblr.com,火烧云'
+    - 'DOMAIN-SUFFIX,typekit.net,火烧云'
+    - 'DOMAIN-SUFFIX,ubertags.com,火烧云'
+    - 'DOMAIN-SUFFIX,ublock.org,火烧云'
+    - 'DOMAIN-SUFFIX,ubnt.com,火烧云'
+    - 'DOMAIN-SUFFIX,ulyssesapp.com,火烧云'
+    - 'DOMAIN-SUFFIX,urchin.com,火烧云'
+    - 'DOMAIN-SUFFIX,usertrust.com,火烧云'
+    - 'DOMAIN-SUFFIX,v.gd,火烧云'
+    - 'DOMAIN-SUFFIX,v2ex.com,火烧云'
+    - 'DOMAIN-SUFFIX,vimeo.com,火烧云'
+    - 'DOMAIN-SUFFIX,vimeocdn.com,火烧云'
+    - 'DOMAIN-SUFFIX,vine.co,火烧云'
+    - 'DOMAIN-SUFFIX,vivaldi.com,火烧云'
+    - 'DOMAIN-SUFFIX,vox-cdn.com,火烧云'
+    - 'DOMAIN-SUFFIX,vsco.co,火烧云'
+    - 'DOMAIN-SUFFIX,vultr.com,火烧云'
+    - 'DOMAIN-SUFFIX,w.org,火烧云'
+    - 'DOMAIN-SUFFIX,w3schools.com,火烧云'
+    - 'DOMAIN-SUFFIX,webtype.com,火烧云'
+    - 'DOMAIN-SUFFIX,wikiwand.com,火烧云'
+    - 'DOMAIN-SUFFIX,wikileaks.org,火烧云'
+    - 'DOMAIN-SUFFIX,wikimedia.org,火烧云'
+    - 'DOMAIN-SUFFIX,wikipedia.com,火烧云'
+    - 'DOMAIN-SUFFIX,wikipedia.org,火烧云'
+    - 'DOMAIN-SUFFIX,windows.com,火烧云'
+    - 'DOMAIN-SUFFIX,windows.net,火烧云'
+    - 'DOMAIN-SUFFIX,wire.com,火烧云'
+    - 'DOMAIN-SUFFIX,wordpress.com,火烧云'
+    - 'DOMAIN-SUFFIX,workflowy.com,火烧云'
+    - 'DOMAIN-SUFFIX,wp.com,火烧云'
+    - 'DOMAIN-SUFFIX,wsj.com,火烧云'
+    - 'DOMAIN-SUFFIX,wsj.net,火烧云'
+    - 'DOMAIN-SUFFIX,xda-developers.com,火烧云'
+    - 'DOMAIN-SUFFIX,xeeno.com,火烧云'
+    - 'DOMAIN-SUFFIX,xiti.com,火烧云'
+    - 'DOMAIN-SUFFIX,yahoo.com,火烧云'
+    - 'DOMAIN-SUFFIX,yimg.com,火烧云'
+    - 'DOMAIN-SUFFIX,ying.com,火烧云'
+    - 'DOMAIN-SUFFIX,yoyo.org,火烧云'
+    - 'DOMAIN-SUFFIX,ytimg.com,火烧云'
+    - 'DOMAIN-SUFFIX,telegra.ph,火烧云'
+    - 'DOMAIN-SUFFIX,telegram.org,火烧云'
+    - 'IP-CIDR,91.108.4.0/22,火烧云,no-resolve'
+    - 'IP-CIDR,91.108.8.0/21,火烧云,no-resolve'
+    - 'IP-CIDR,91.108.16.0/22,火烧云,no-resolve'
+    - 'IP-CIDR,91.108.56.0/22,火烧云,no-resolve'
+    - 'IP-CIDR,149.154.160.0/20,火烧云,no-resolve'
+    - 'IP-CIDR6,2001:67c:4e8::/48,火烧云,no-resolve'
+    - 'IP-CIDR6,2001:b28:f23d::/48,火烧云,no-resolve'
+    - 'IP-CIDR6,2001:b28:f23f::/48,火烧云,no-resolve'
+    - 'IP-CIDR,120.232.181.162/32,火烧云,no-resolve'
+    - 'IP-CIDR,120.241.147.226/32,火烧云,no-resolve'
+    - 'IP-CIDR,120.253.253.226/32,火烧云,no-resolve'
+    - 'IP-CIDR,120.253.255.162/32,火烧云,no-resolve'
+    - 'IP-CIDR,120.253.255.34/32,火烧云,no-resolve'
+    - 'IP-CIDR,120.253.255.98/32,火烧云,no-resolve'
+    - 'IP-CIDR,180.163.150.162/32,火烧云,no-resolve'
+    - 'IP-CIDR,180.163.150.34/32,火烧云,no-resolve'
+    - 'IP-CIDR,180.163.151.162/32,火烧云,no-resolve'
+    - 'IP-CIDR,180.163.151.34/32,火烧云,no-resolve'
+    - 'IP-CIDR,203.208.39.0/24,火烧云,no-resolve'
+    - 'IP-CIDR,203.208.40.0/24,火烧云,no-resolve'
+    - 'IP-CIDR,203.208.41.0/24,火烧云,no-resolve'
+    - 'IP-CIDR,203.208.43.0/24,火烧云,no-resolve'
+    - 'IP-CIDR,203.208.50.0/24,火烧云,no-resolve'
+    - 'IP-CIDR,220.181.174.162/32,火烧云,no-resolve'
+    - 'IP-CIDR,220.181.174.226/32,火烧云,no-resolve'
+    - 'IP-CIDR,220.181.174.34/32,火烧云,no-resolve'
+    - 'DOMAIN,injections.adguard.org,DIRECT'
+    - 'DOMAIN,local.adguard.org,DIRECT'
+    - 'DOMAIN-SUFFIX,local,DIRECT'
+    - 'IP-CIDR,127.0.0.0/8,DIRECT'
+    - 'IP-CIDR,172.16.0.0/12,DIRECT'
+    - 'IP-CIDR,192.168.0.0/16,DIRECT'
+    - 'IP-CIDR,10.0.0.0/8,DIRECT'
+    - 'IP-CIDR,17.0.0.0/8,DIRECT'
+    - 'IP-CIDR,100.64.0.0/10,DIRECT'
+    - 'IP-CIDR,224.0.0.0/4,DIRECT'
+    - 'IP-CIDR6,fe80::/10,DIRECT'
+    - 'DOMAIN-SUFFIX,cn,DIRECT'
+    - 'DOMAIN-KEYWORD,-cn,DIRECT'
+    - 'GEOIP,CN,DIRECT'
+    - 'MATCH,火烧云'
